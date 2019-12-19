@@ -1,0 +1,21 @@
+{% extends "blog/main_layout.html" %}
+{% load static %}
+{% load blogfilter %}
+{% block meta_des %}Tags của trang {{ mysite.title }}{% endblock %}
+{% block title %}Tags | {{ mysite.title }}{% endblock %}
+
+{% block bread%}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'blog:index' %}">Bài mới</a></li>
+    <li class="breadcrumb-item">Tags</li>
+  </ol>
+</nav>
+{% endblock %}
+
+{% block content %}
+  {% for tag in tag_list %}
+    <p><a href="{% url 'blog:tag' tag.name %}">{{ tag.name }}({{ tag.num_posts }})</a></p>
+    <hr>
+  {% endfor %}
+{% endblock %}
