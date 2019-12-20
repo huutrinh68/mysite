@@ -15,6 +15,7 @@ services:
       - ./nginx/conf:/etc/nginx/conf.d
       - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
       - ./src/blog/static:/static
+      - ./src/media:/media
     depends_on:
       - web
 
@@ -38,6 +39,9 @@ services:
     volumes:
       - ./src:/code
       - ./src/blog/static:/static
+      - ./src/media:/media
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
     ports:
       - "8001"
     depends_on:
