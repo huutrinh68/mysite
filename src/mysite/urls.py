@@ -17,11 +17,16 @@ from django.conf import settings #add
 from django.contrib import admin
 from django.urls import path, include #add
 from django.conf.urls.static import static #add
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns #add
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')), # add
+    path('', include('blog.urls')), #add
 ]
+
+urlpatterns += staticfiles_urlpatterns() #add
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #add
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #add
 
 admin.site.site_header = "Huutrinh's Site Admin"
 admin.site.site_title = "Huutrinh's Site Admin Portal"
