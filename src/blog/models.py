@@ -4,6 +4,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
 from django.db import models
 from django.utils import timezone
+from markdown import markdown
+from django.utils.html import mark_safe
 
 
 # Choose color for site
@@ -93,6 +95,8 @@ class Post(models.Model):
             return prev_post.first()
         return None
 
+    def get_message_as_markdown(self):
+        return mark_safe(markdown(self.text, safe_mode='escape'))
 
 class Comment(models.Model):
     """Comment"""
