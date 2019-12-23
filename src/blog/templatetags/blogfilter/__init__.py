@@ -54,9 +54,9 @@ def by_the_time(dt):
     hours = int(s / 3600)
     if hours >= 24:
         day = int(hours / 24)
-        return 'about {0} days ago'.format(day)
+        return 'About {0} days ago'.format(day)
     elif hours == 0:
         minute = int(s / 60)
-        return 'about {0} mins ago'.format(minute)
+        return 'About {0} mins ago'.format(minute)
     else:
-        return 'about {0} hours ago'.format(hours)
+        return 'About {0} hours ago'.format(hours)
