@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps', # add
     # 'rest_framework', #add
     # 'corsheaders', #add
+    'django_mathjax', #add
 
 ]
 
@@ -61,6 +62,18 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True #add
+MATHJAX_ENABLED=True #add
+MATHJAX_CONFIG_FILE = "TeX-AMS-MML_HTMLorMML" #add
+MATHJAX_CONFIG_DATA = {
+  "tex2jax": {
+    "inlineMath":
+      [
+          ['$','$'],
+          ['\\(','\\)']
+      ]
+  }
+}
+
 
 ROOT_URLCONF = 'mysite.urls'
 
