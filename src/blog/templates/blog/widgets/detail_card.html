@@ -35,7 +35,10 @@
         <hr>
       {% endif %}
     
-    {{ post.text | linebreaksbr | blog }}
+    <!-- {{ post.text | linebreaksbr | blog }} -->
+    {{ post.get_message_as_markdown | linebreaksbr | blog }}
+    <!-- {{ post.get_message_as_markdown }} -->
+    
   </div>
   
   <div class="card-footer">
