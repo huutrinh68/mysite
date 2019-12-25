@@ -6,3 +6,4 @@ django-filter
 Pillow
 uwsgi==2.0.18
 markdown
+Django-MathJax
