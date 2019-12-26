@@ -96,7 +96,7 @@ class Post(models.Model):
         return None
 
     def get_message_as_markdown(self):
-        return mark_safe(markdown(self.text, safe_mode='escape'))
+        return mark_safe(markdown(self.text, extensions=['fenced_code', 'attr_list'], safe_mode='escape'))
 
 class Comment(models.Model):
     """Comment"""

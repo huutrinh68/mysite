@@ -1182,7 +1182,7 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-1	pbkdf2_sha256$150000$IZqSXwJJ28QG$wXQDO+rxNVmWuYSWCOs9wki7o0qm0qqknu6JtrqW3RE=	2019-12-19 06:00:59.806925+00	t	huutrinh			trinhsp89@gmail.com	t	t	2019-12-19 05:58:06.858057+00
+1	pbkdf2_sha256$150000$IZqSXwJJ28QG$wXQDO+rxNVmWuYSWCOs9wki7o0qm0qqknu6JtrqW3RE=	2019-12-23 05:33:43.98791+00	t	huutrinh			trinhsp89@gmail.com	t	t	2019-12-19 05:58:06.858057+00
 \.
 
 
@@ -1223,6 +1223,7 @@ COPY public.blog_analytics (id, name, html) FROM stdin;
 --
 
 COPY public.blog_category (id, name) FROM stdin;
+1	django
 \.
 
 
@@ -1247,6 +1248,7 @@ COPY public.blog_file (id, title, src, object_id, created_at, content_type_id) F
 --
 
 COPY public.blog_image (id, src, created_at, post_id, title) FROM stdin;
+1	images/2019/12/20/ID_0a3c2c009.jpg	2019-12-20 00:31:26+00	1	
 \.
 
 
@@ -1271,6 +1273,7 @@ COPY public.blog_popularpost (id, title, url, page_view) FROM stdin;
 --
 
 COPY public.blog_post (id, title, text, thumnail, is_publick, description, created_at, category_id) FROM stdin;
+1	django	introduction about django\r\n[filter img]/media/images/2019/12/20/ID_0a3c2c009.jpg[end]\r\n\r\n### Test	post_thumbnail/2019/12/20/ID_0a1cb53b1.jpg	t		2019-12-20 00:31:26+00	1
 \.
 
 
@@ -1303,7 +1306,7 @@ COPY public.blog_recomment (id, name, text, icon, created_at, target_id) FROM st
 --
 
 COPY public.blog_sitedetail (id, title, header_text, description, author, author_mail, color, site_id) FROM stdin;
-1	Blog kỹ thuật	Ký sự Nhật Bản	Học tập và chia sẻ	Citynow	huutrinh.nguyen@citynow.jp	secondary	1
+1	test site	test	tset	Citynow	huutrinh.nguyen@citynow.jp	secondary	1
 \.
 
 
@@ -1327,6 +1330,12 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 5	2019-12-19 06:32:06.328216+00	1	example.com	2	[{"changed": {"name": "site detail", "object": "Citynow", "fields": ["author"]}}]	7	1
 6	2019-12-19 06:33:24.958575+00	1	example.com	2	[{"changed": {"name": "site detail", "object": "Citynow", "fields": ["header_text"]}}]	7	1
 7	2019-12-19 06:34:32.496999+00	1	example.com	2	[{"changed": {"name": "site detail", "object": "Citynow", "fields": ["description"]}}]	7	1
+8	2019-12-20 00:31:58.168806+00	1	django	1	[{"added": {}}]	10	1
+9	2019-12-20 00:32:41.255175+00	1	django	1	[{"added": {}}, {"added": {"name": "image", "object": "Indirect Link:[filter imgpk]1[end] Direct link:[filter img]/media/images/2019/12/20/ID_0a3c2c009.jpg[end]"}}]	16	1
+10	2019-12-20 00:32:56.052223+00	1	django	2	[{"changed": {"fields": ["text"]}}]	16	1
+11	2019-12-20 00:51:48.442769+00	1	django	2	[{"changed": {"fields": ["text"]}}]	16	1
+12	2019-12-20 02:22:10.015083+00	1	example.com	2	[{"changed": {"name": "site detail", "object": "Citynow", "fields": ["title", "header_text", "description"]}}]	7	1
+13	2019-12-23 05:33:59.444284+00	1	django	2	[{"changed": {"fields": ["text"]}}]	16	1
 \.
 
 
@@ -1393,6 +1402,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
 jyn2af7hndrcgdc9gd5t7wpboyyytzj0	MDU1ZGVjM2M1YmVhNzRiMDdlMTc3YmQwMGFiYzFjNGMxNWFkMGZlNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI5MjZlNWM5ZTJjZWU2MzhjY2ZkNDBmMzVlYmU4Mzc1MWU1M2JkOGQ2In0=	2020-01-02 06:00:59.809788+00
+m3ueb5f5oltv6pd7e0avaovh942mw6gs	MDU1ZGVjM2M1YmVhNzRiMDdlMTc3YmQwMGFiYzFjNGMxNWFkMGZlNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI5MjZlNWM5ZTJjZWU2MzhjY2ZkNDBmMzVlYmU4Mzc1MWU1M2JkOGQ2In0=	2020-01-06 05:33:43.995049+00
 \.
 
 
@@ -1465,7 +1475,7 @@ SELECT pg_catalog.setval('public.blog_analytics_id_seq', 1, false);
 -- Name: blog_category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.blog_category_id_seq', 1, false);
+SELECT pg_catalog.setval('public.blog_category_id_seq', 1, true);
 
 
 --
@@ -1486,7 +1496,7 @@ SELECT pg_catalog.setval('public.blog_file_id_seq', 1, false);
 -- Name: blog_image_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.blog_image_id_seq', 1, false);
+SELECT pg_catalog.setval('public.blog_image_id_seq', 1, true);
 
 
 --
@@ -1514,7 +1524,7 @@ SELECT pg_catalog.setval('public.blog_post_friend_posts_id_seq', 1, false);
 -- Name: blog_post_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.blog_post_id_seq', 1, false);
+SELECT pg_catalog.setval('public.blog_post_id_seq', 1, true);
 
 
 --
@@ -1549,7 +1559,7 @@ SELECT pg_catalog.setval('public.blog_tag_id_seq', 1, false);
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 7, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 13, true);
 
 
 --
